@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ClienteController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +25,17 @@ Route::get('/', function () {
     $grupo = '$grupo = TDSV11-C';
     return view('Parcial_2/presentacion', compact('titulo','intro','nombreJ','carnetJ','nombreK','carnetK', 'grupo'));
 });
+
+/*Route::get('/', function () {
+
+
+    return view('layouts/app');
+});*/
+
+Route::resource('clientes', ClienteController::class);
+
+Route::resource('articulo', App\Http\Controllers\ArticuloController::class);
+Route::resource('pedido', App\Http\Controllers\PedidoController::class);
+Route::resource('detalle_pedidos', App\Http\Controllers\DetallePedidoController::class);
+
+

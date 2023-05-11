@@ -40,5 +40,19 @@
         <hr>
         <p class="display-6">{{ $grupo }}</p>
       </div>
+      <div class="container-fluid">
+        <li class="nav-item">    
+            <a class="nav-link" href="{{ route('clientes.index')}}">Clientes</a>
+        </li>
+        <li>
+            <a class="nav-link" href="{{ route('articulo.index')}}">Articulos</a>
+        </li>
+        <li class="nav-item">    
+            <a class="nav-link" href="{{ route('pedido.index')}}">Pedidos</a>
+        </li>
+        <li>
+            <a class="nav-link" href="{{ route('detalle_pedidos.index')}}">Detalle de Pedidos</a>
+        </li>
+      </div>
 </body>
 </html>
