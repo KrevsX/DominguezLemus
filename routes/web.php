@@ -14,5 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $titulo = 'Parcial 2 DAW';
+    $intro = 'PARCIAL #2 DESARROLLO DE APLICACIONES WEB';
+    $nombreJ = '$nombre = Josue Naum Dominguez Velasquez';
+    $carnetJ = '$carnet = 077722';
+    $nombreK = '$nombre = Kevin Armando Lemus Alas';
+    $carnetK = '$carnet = 170622';
+    $grupo = '$grupo = TDSV11-C';
+    return view('Parcial_2/presentacion', compact('titulo','intro','nombreJ','carnetJ','nombreK','carnetK', 'grupo'));
 });
