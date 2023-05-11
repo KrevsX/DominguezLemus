@@ -18,7 +18,7 @@ return new class extends Migration
             $table->dateTime('fechaPedido');
             $table->dateTime('fechaEntrega');
             $table->string('Observaciones', 150);
-            $table->unsignedInteger('id_cliente');
+            $table->unsignedInteger('id_cliente')->default(1);
     
             $table->foreign('id_cliente')->references('id_cliente')->on('clientes');
             $table->timestamps();
