@@ -25,34 +25,111 @@
     color: #AAF0D1;
     }
 
+        @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+    * {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    }
+
+    .navMenu {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    }
+
+    .navMenu a {
+    color: #f6f4e6;
+    text-decoration: none;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+    display: inline-block;
+    width: 150px;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    }
+
+    .navMenu a:hover {
+    color: #fddb3a;
+    }
+
+    .navMenu .dot {
+    width: 6px;
+    height: 6px;
+    background: #fddb3a;
+    border-radius: 50%;
+    opacity: 0;
+    -webkit-transform: translateX(30px);
+    transform: translateX(30px);
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    }
+
+    .navMenu a:nth-child(1):hover ~ .dot {
+    -webkit-transform: translateX(35px);
+    transform: translateX(35px);
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    opacity: 1;
+    }
+
+    .navMenu a:nth-child(2):hover ~ .dot {
+    -webkit-transform: translateX(185px);
+    transform: translateX(185px);
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    opacity: 1;
+    }
+
+    .navMenu a:nth-child(3):hover ~ .dot {
+    -webkit-transform: translateX(350px);
+    transform: translateX(350px);
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    opacity: 1;
+    }
+
+    .navMenu a:nth-child(4):hover ~ .dot {
+    -webkit-transform: translateX(535px);
+    transform: translateX(535px);
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    opacity: 1;
+    }
+
+
 
 </style>
 </head>
+
 <body>
     <div class="container-fluid">
-        <h1 class="display-5">{{ $intro}}</h1>
+        <header>
+            <nav class="navMenu">
+                <a href="{{ route('clientes.index')}}">Clientes</a>
+                <a href="{{ route('pedidos.index')}}">Pedidos</a>
+                <a href="{{ route('articulos.index')}}">Articulos</a>
+                <a href="{{ route('detalle_pedidos.index')}}">Detalle Pedidos</a>
+                <div class="dot"></div>
+              </nav>
+        </header>
+    </div>
+    <br><br>
+
+    <div class="container-fluid">
+        <h1 class="display-6">{{ $intro}}</h1>
         <hr>
-        <h2 class="display-6">{{ $nombreJ}}</h2>
-        <h2 class="display-6"> {{ $carnetJ }}</h2>
+        <h2 class="display-7">{{ $nombreJ}}</h2>
+        <h2 class="display-7"> {{ $carnetJ }}</h2>
         <hr>
-        <h2 class="display-6">{{ $nombreK}}</h2>
-        <h2 class="display-6"> {{ $carnetK }}</h2>
+        <h2 class="display-7">{{ $nombreK}}</h2>
+        <h2 class="display-7"> {{ $carnetK }}</h2>
         <hr>
-        <p class="display-6">{{ $grupo }}</p>
-      </div>
-      <div class="container-fluid">
-        <li class="nav-item">    
-            <a class="nav-link" href="{{ route('clientes.index')}}">Clientes</a>
-        </li>
-        <li>
-            <a class="nav-link" href="{{ route('articulos.index')}}">Articulos</a>
-        </li>
-        <li class="nav-item">    
-            <a class="nav-link" href="{{ route('pedidos.index')}}">Pedidos</a>
-        </li>
-        <li>
-            <a class="nav-link" href="{{ route('detalle_pedidos.index')}}">Detalle de Pedidos</a>
-        </li>
+        <p class="display-7">{{ $grupo }}</p>
       </div>
 </body>
 </html>
