@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\PedidoController;
+use App\Http\Controllers\ArticuloController;
+use App\Http\Controllers\DetallePedidoController;
 
 
 /*
@@ -33,9 +36,9 @@ Route::get('/', function () {
 });*/
 
 Route::resource('clientes', ClienteController::class);
+Route::resource('articulos', ArticuloController::class);
+Route::resource('pedidos', PedidoController::class);
+Route::resource('detalle_pedidos', DetallePedidoController::class);
 
-Route::resource('articulo', App\Http\Controllers\ArticuloController::class);
-Route::resource('pedido', App\Http\Controllers\PedidoController::class);
-Route::resource('detalle_pedidos', App\Http\Controllers\DetallePedidoController::class);
 
 

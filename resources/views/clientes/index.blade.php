@@ -34,23 +34,29 @@
 <body>
     <div class="container-fluid">
         <h1 class="display-6">Listado de Clientes</h1>
-        
-        <form action="{{ route('clientes.index') }}" method="GET" id="formClientes">
-            @csrf
-            <button type="submit" class="btn btn-success" id="btnMostrarClientes">Mostrar Clientes</button>
-        </form>
-        <br>
-        <form action="{{ route('clientes.create') }}">
-            @csrf
-            <button type="submit" class="btn btn-success" id="btnCrearCliente">Crear Cliente Nuevo</button>
-        </form>
-
+        <table>
+            <tr>
+                <td>
+                    <form action="{{ route('clientes.index') }}" method="GET" id="formClientes">
+                        @csrf
+                        <button type="submit" class="btn btn-success" id="btnMostrarClientes">Mostrar Clientes</button>
+                    </form>
+                </td>
+                <td>   </td>
+                <td>
+                    <form action="{{ route('clientes.create') }}">
+                        @csrf
+                        <button type="submit" class="btn btn-success" id="btnCrearCliente">Crear Cliente Nuevo</button>
+                    </form>
+                </td>
+            </tr>
+        </table>
         <br>
         <div id="clientesContainer" style="display: none;">
-            <table class="table table-hover">
+            <table class="table">
                 <thead>
                     <tr>
-                        <th>#</th>
+                        <th>ID</th>
                         <th>Nombre</th>
                         <th>Apellido</th>
                         <th>Fecha de Nacimiento</th>
@@ -65,12 +71,12 @@
                             <td>{{ $cliente->apellido }}</td>
                             <td>{{ $cliente->fechaNac }}</td>
                             <td>
-                                <a href="{{ route('clientes.show', $cliente->id_cliente) }}">Ver</a>
-                                <a href="{{ route('clientes.edit', $cliente->id_cliente) }}">Editar</a>
-                                <form action="{{ route('clientes.destroy', $cliente->id_cliente) }}" method="POST">
+                                <a href="{{ route('clientes.show', $cliente->id_cliente) }}" class="btn btn-sm btn-primary">Ver</a>
+                                <a href="{{ route('clientes.edit', $cliente->id_cliente) }}" class="btn btn-sm btn-success">Editar</a>
+                                <form action="{{ route('clientes.destroy', $cliente->id_cliente) }}" method="POST" style="display: inline">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                                    <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
                                 </form>
                             </td>
                         </tr>

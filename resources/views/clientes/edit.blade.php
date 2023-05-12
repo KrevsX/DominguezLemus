@@ -44,11 +44,14 @@
             <label for="fechaNac">Fecha de Nacimiento:</label>
             <input class="form-control form-control-sm" type="text" aria-label=".form-control-sm example" style="width: 200px;" name="fechaNac" value="{{ $cliente->fechaNac }}" required>
             <br>        
-            <button type="submit"class="btn btn-success">Guardar</button>
+            <button type="submit" class="btn btn-primary">Actualizar</button>
+            <form action="{{ route('clientes.index') }}">
+                @csrf
+                <button type="submit" class="btn btn-danger" >Volver</button>
+            </form>
         </form>
         <br>
         
-        <a href="{{ route('clientes.index') }}">Volver</a>
-      </div>
+        </div>
 </body>
 </html>

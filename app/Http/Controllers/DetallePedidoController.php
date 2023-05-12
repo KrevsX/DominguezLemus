@@ -14,7 +14,9 @@ class DetallePedidoController extends Controller
      */
     public function index()
     {
-        //
+        $detallePedidos = DetallePedido::all();
+
+        return view('detalle_pedidos.index', compact('detallePedidos'));
     }
 
     /**

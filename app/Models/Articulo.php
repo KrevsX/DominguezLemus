@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Articulo extends Model
 {
     use HasFactory;
+
+    protected $primaryKey = 'id';
+    
+    protected $fillable  = [
+        'nombre',
+        'descripcion',
+        'cantInventario',
+        'precio',
+    ];
 }

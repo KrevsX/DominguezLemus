@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Articulo;
+use App\Models\DetallePedido;
+use App\Models\Cliente;
 use Illuminate\Http\Request;
 
 class ArticuloController extends Controller
@@ -14,7 +16,9 @@ class ArticuloController extends Controller
      */
     public function index()
     {
-        //
+        $articulos = Articulo::all();
+
+        return view('articulos.index', compact('articulos'));
     }
 
     /**
@@ -24,7 +28,7 @@ class ArticuloController extends Controller
      */
     public function create()
     {
-        //
+        return view('articulos.create');
     }
 
     /**
@@ -35,8 +39,18 @@ class ArticuloController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nombre' => 'required',
+            'descripcion' => 'required',
+            'cantInventario' => 'required|integer',
+            'precio' => 'required|numeric',
+        ]);
+
+        Articulo::create($request->all());
+
+        return redirect()->route('articulos.index')->with('success', 'Artículo creado exitosamente');
     }
+
 
     /**
      * Display the specified resource.
@@ -46,7 +60,7 @@ class ArticuloController extends Controller
      */
     public function show(Articulo $articulo)
     {
-        //
+        return view('articulos.show', compact('articulo'));
     }
 
     /**
@@ -57,9 +71,8 @@ class ArticuloController extends Controller
      */
     public function edit(Articulo $articulo)
     {
-        //
+        return view('articulos.edit', compact('articulo'));
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -69,9 +82,17 @@ class ArticuloController extends Controller
      */
     public function update(Request $request, Articulo $articulo)
     {
-        //
-    }
+        $request->validate([
+            'nombre' => 'required',
+            'descripcion' => 'required',
+            'cantInventario' => 'required|integer',
+            'precio' => 'required|numeric',
+        ]);
 
+        $articulo->update($request->all());
+
+        return redirect()->route('articulos.index')->with('success', 'Artículo actualizado exitosamente');
+    }
     /**
      * Remove the specified resource from storage.
      *
@@ -80,6 +101,8 @@ class ArticuloController extends Controller
      */
     public function destroy(Articulo $articulo)
     {
-        //
+        $articulo->delete();
+
+        return redirect()->route('articulos.index')->with('success', 'Artículo eliminado exitosamente');
     }
 }

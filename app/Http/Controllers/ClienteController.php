@@ -58,9 +58,16 @@ class ClienteController extends Controller
 
     public function destroy($id)
     {
-        $cliente = Cliente::find($id);
+        $cliente = Cliente::findOrFail($id);
+    
+        // Eliminar los pedidos asociados al cliente
+        $cliente->pedidos()->delete();
+    
+        // Eliminar el cliente
         $cliente->delete();
-
+    
         return redirect()->route('clientes.index')->with('success', 'Cliente eliminado exitosamente');
     }
+    
+    
 }
