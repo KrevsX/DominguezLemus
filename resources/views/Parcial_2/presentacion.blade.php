@@ -21,25 +21,25 @@
     75%{ background: #270202;}
     100%{ background: #01142c;}
     }
-h1,h2,span{
-    color: #AAF0D1;
-    
-}
-.display-6, .display-7 {
-  overflow: hidden; /* Para ocultar el texto que aún no se ha mostrado */
-  border-right: .09em solid #AAF0D1; /* Simula el cursor de escritura */
-  white-space: nowrap; /* Evita el salto de línea */
-  margin: 0 auto; /* Centra el texto horizontalmente */
-  letter-spacing: .15em; /* Espaciado entre letras */
-  animation:
-    escribir 3s steps(40, end),
-    parpadear .5s step-end infinite alternate; /* Animaciones */
-}
+    h1,h2,span{
+        color: #AAF0D1;
+        
+    }
+    .display-6, .display-7 {
+    overflow: hidden; /* Para ocultar el texto que aún no se ha mostrado */
+    border-right: .09em solid #AAF0D1; /* Simula el cursor de escritura */
+    white-space: nowrap; /* Evita el salto de línea */
+    margin: 0 auto; /* Centra el texto horizontalmente */
+    letter-spacing: .15em; /* Espaciado entre letras */
+    animation:
+        escribir 3s steps(40, end),
+        parpadear .5s step-end infinite alternate; /* Animaciones */
+    }
 
-@keyframes escribir {
-  from { width: 0; }
-  to { width: 100%; }
-}
+    @keyframes escribir {
+    from { width: 0; }
+    to { width: 100%; }
+    }
     @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
     * {
     margin: 0;
