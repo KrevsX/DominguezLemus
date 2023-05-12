@@ -9,9 +9,9 @@ class Articulo extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = 'id';
-    
-    protected $fillable  = [
+    protected $primaryKey = 'id_articulo';
+
+    protected $fillable = [
         'nombre',
         'descripcion',
         'cantInventario',

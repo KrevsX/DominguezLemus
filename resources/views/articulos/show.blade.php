@@ -31,38 +31,18 @@
 </head>
 <body>
     <div class="container-fluid">
-        <h1 class="display-6">Detalle Cliente.</h1>
-        <br>
-        <h1>Editar Artículo</h1>
+        <h1 class="display-6">Detalles del Artículo</h1>
 
-        <form action="{{ route('articulos.update', $articulo->id_articulo) }}" method="POST">
-            @csrf
-            @method('PUT')
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Nombre: {{ $articulo->nombre }}</h5>
+                <p class="card-text">Descripción: {{ $articulo->descripcion }}</p>
+                <p class="card-text">Cantidad en Inventario: {{ $articulo->cantInventario }}</p>
+                <p class="card-text">Precio: {{ $articulo->precio }}</p>
+            </div>
+        </div>
 
-            <div class="form-group">
-                <label for="nombre">Nombre</label>
-                <input type="text" class="form-control" name="nombre" value="{{ $articulo->nombre }}" required>
-            </div>
-            <div class="form-group">
-                <label for="descripcion">Descripción</label>
-                <textarea class="form-control" name="descripcion" rows="3" required>{{ $articulo->descripcion }}</textarea>
-            </div>
-            <div class="form-group">
-                <label for="cantInventario">Cantidad en Inventario</label>
-                <input type="number" class="form-control" name="cantInventario" value="{{ $articulo->cantInventario }}" required>
-            </div>
-            <div class="form-group">
-                <label for="precio">Precio</label>
-                <input type="number" step="0.01" class="form-control" name="precio" value="{{ $articulo->precio }}" required>
-            </div>
-
-            <br>
-            <button type="submit" class="btn btn-primary">Guardar Cambios</button>
-        </form>
-        <form action="{{ route('clientes.index') }}">
-            @csrf
-            <button type="submit" class="btn btn-danger" >Volver</button>
-        </form>
+        <a href="{{ route('articulos.index') }}" class="btn btn-primary mt-3">Volver</a>
       </div>
 </body>
 </html>
