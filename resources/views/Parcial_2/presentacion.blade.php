@@ -15,17 +15,32 @@
 
     }
     @keyframes fondo{
-  0%{ background: #01142c;}
-  25%{ background: #190233;}
-  50%{ background: #270f27;}
-  75%{ background: #270202;}
-  100%{ background: #01142c;}
+    0%{ background: #01142c;}
+    25%{ background: #190233;}
+    50%{ background: #270f27;}
+    75%{ background: #270202;}
+    100%{ background: #01142c;}
     }
-    h1,h2,p{
+h1,h2,span{
     color: #AAF0D1;
-    }
+    
+}
+.display-6, .display-7 {
+  overflow: hidden; /* Para ocultar el texto que aún no se ha mostrado */
+  border-right: .09em solid #AAF0D1; /* Simula el cursor de escritura */
+  white-space: nowrap; /* Evita el salto de línea */
+  margin: 0 auto; /* Centra el texto horizontalmente */
+  letter-spacing: .15em; /* Espaciado entre letras */
+  animation:
+    escribir 3s steps(40, end),
+    parpadear .5s step-end infinite alternate; /* Animaciones */
+}
 
-        @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+@keyframes escribir {
+  from { width: 0; }
+  to { width: 100%; }
+}
+    @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
     * {
     margin: 0;
     padding: 0;
@@ -102,7 +117,6 @@
     }
 
 
-
 </style>
 </head>
 
@@ -129,7 +143,7 @@
         <h2 class="display-7">{{ $nombreK}}</h2>
         <h2 class="display-7"> {{ $carnetK }}</h2>
         <hr>
-        <p class="display-7">{{ $grupo }}</p>
+        <h2 class="display-7">{{ $grupo }}</h2>
       </div>
 </body>
 </html>
