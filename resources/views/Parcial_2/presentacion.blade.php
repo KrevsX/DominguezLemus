@@ -132,18 +132,18 @@
               </nav>
         </header>
     </div>
-    <br><br>
+    <br><br><br>
 
     <div class="container-fluid">
         <h1 class="display-6">{{ $intro}}</h1>
         <hr>
-        <h2 class="display-7">{{ $nombreJ}}</h2>
-        <h2 class="display-7"> {{ $carnetJ }}</h2>
+        <h2 class="display-6">{{ $nombreJ}}</h2>
+        <h2 class="display-6"> {{ $carnetJ }}</h2>
         <hr>
-        <h2 class="display-7">{{ $nombreK}}</h2>
-        <h2 class="display-7"> {{ $carnetK }}</h2>
+        <h2 class="display-6">{{ $nombreK}}</h2>
+        <h2 class="display-6"> {{ $carnetK }}</h2>
         <hr>
-        <h2 class="display-7">{{ $grupo }}</h2>
+        <h2 class="display-6">{{ $grupo }}</h2>
       </div>
 </body>
 </html>
