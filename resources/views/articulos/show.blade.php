@@ -38,7 +38,7 @@
                 <h5 class="card-title">Nombre: {{ $articulo->nombre }}</h5>
                 <p class="card-text">Descripción: {{ $articulo->descripcion }}</p>
                 <p class="card-text">Cantidad en Inventario: {{ $articulo->cantInventario }}</p>
-                <p class="card-text">Precio: {{ $articulo->precio }}</p>
+                <p class="card-text">Precio: $ {{ $articulo->precio }}</p>
             </div>
         </div>
 
