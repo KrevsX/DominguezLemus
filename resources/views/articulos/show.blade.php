@@ -42,7 +42,7 @@
             </div>
         </div>
 
-        <a href="{{ route('articulos.index') }}" class="btn btn-primary mt-3">Volver</a>
+        <a href="{{ route('articulos.index') }}" class="btn btn-danger mt-3">Volver</a>
       </div>
 </body>
 </html>

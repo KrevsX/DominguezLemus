@@ -51,6 +51,7 @@
             </div>
             <br>
             <button type="submit" class="btn btn-primary">Crear Artículo</button>
+            
         </form>
     </div>    
 </body>

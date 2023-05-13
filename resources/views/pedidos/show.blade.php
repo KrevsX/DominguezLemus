@@ -57,13 +57,31 @@
                 </tr>
             </tbody>
         </table>
-    
-        <a href="{{ route('pedidos.edit', $pedido->id_pedido) }}" class="btn btn-primary">Editar</a>
-        <form action="{{ route('pedidos.destroy', $pedido->id_pedido) }}" method="POST" style="display: inline">
-            @csrf
-            @method('DELETE')
-            <button type="submit" class="btn btn-danger">Eliminar</button>
-        </form>
+    <table>
+        <tr>
+            <td>
+                <a href="{{ route('pedidos.edit', $pedido->id_pedido) }}" class="btn btn-primary">Editar</a>
+            </td>
+            <td>
+                <form action="{{ route('pedidos.index') }}">
+                    @csrf
+                    <button button type="submit" class="btn btn-danger" >Volver</button>
+            </form>
+            </td>
+            <td>
+                <form action="{{ route('pedidos.destroy', $pedido->id_pedido) }}" method="POST" style="display: inline">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                </form>
+            </td>
+        </tr>
+
+    </table>
+   
+        
+
+        
       </div>
 </body>
 </html>

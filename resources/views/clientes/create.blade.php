@@ -43,7 +43,6 @@
             <label for="fechaNac">Fecha de Nacimiento:</label>
             <input type="text" class="form-control form-control-sm" placeholder="AA/MM/DD" type="text" aria-label=".form-control-sm example" style="width: 200px;" name="fechaNac" required>
             <br>
-            <button type="submit" class="btn btn-primary">Actualizar</button>
             <form action="{{ route('clientes.index') }}">
                 @csrf
                 <button type="submit" class="btn btn-danger" >Volver</button>

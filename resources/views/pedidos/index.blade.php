@@ -34,7 +34,24 @@
 <body>
     <div class="container-fluid">
         <h1 class="display-6">Listado de Pedidos</h1>
-        <a href="{{ route('pedidos.create') }}" class="btn btn-primary mb-3">Crear Pedido</a>
+        <table>
+            <tr>
+                <td>
+                    <form action="{{ route('pedidos.create') }}" method="GET">
+                        @csrf
+                        <button type="submit" class="btn btn-primary">Crear Pedido</button>
+                    </form>
+                </td>
+                <td>
+                    <form action="{{ route('presentacion') }}">
+                        @csrf
+                        <button type="submit" class="btn btn-danger">Inicio</button>
+                    </form>
+                </td>
+                <td>
+                </td>
+            </tr>
+        </table>
         <table class="table">
             <thead>
                 <tr>

@@ -37,7 +37,13 @@
                 <td>
                     <form action="{{ route('articulos.create') }}" method="GET">
                         @csrf
-                        <button type="submit" class="btn btn-primary mb-3">Crear Nuevo Ariculo</button>
+                        <button type="submit" class="btn btn-primary">Crear Nuevo Ariculo</button>
+                    </form>
+                </td>
+                <td>
+                    <form action="{{ route('presentacion') }}">
+                        @csrf
+                        <button type="submit" class="btn btn-danger">Inicio</button>
                     </form>
                 </td>
                 <td>

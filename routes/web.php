@@ -5,6 +5,7 @@ use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\PedidoController;
 use App\Http\Controllers\ArticuloController;
 use App\Http\Controllers\DetallePedidoController;
+use App\Http\Controllers\PresentacionController;
 
 
 /*
@@ -27,7 +28,7 @@ Route::get('/', function () {
     $carnetK = '$carnet = 170622';
     $grupo = '$grupo = TDSV11-C';
     return view('Parcial_2/presentacion', compact('titulo','intro','nombreJ','carnetJ','nombreK','carnetK', 'grupo'));
-});
+})->name('presentacion');
 
 /*Route::get('/', function () {
 

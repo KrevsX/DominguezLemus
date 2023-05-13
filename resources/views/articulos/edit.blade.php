@@ -53,6 +53,10 @@
             </div>
             <br>
             <button type="submit" class="btn btn-primary">Actualizar</button>
+            <form action="{{ route('articulos.index') }}">
+                @csrf
+                <button button type="submit" class="btn btn-danger" >Volver</button>
+        </form>
         </form>
       </div>
 </body>

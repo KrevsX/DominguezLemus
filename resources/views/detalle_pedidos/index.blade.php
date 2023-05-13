@@ -32,6 +32,16 @@
 <body>
     <div class="container-fluid">
         <h1 class="display-6">Lista de Detalle de Pedidos</h1>
+        <table>
+            <tr>
+                <td>
+                   <form action="{{ route('presentacion') }}">
+                        @csrf
+                        <button type="submit" class="btn btn-danger">Inicio</button>
+                    </form>
+                </td>
+            </tr>
+        </table>
         <table class="table">
             <thead>
                 <tr>

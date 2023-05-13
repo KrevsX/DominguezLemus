@@ -49,6 +49,12 @@
                         <button type="submit" class="btn btn-success" id="btnCrearCliente">Crear Cliente Nuevo</button>
                     </form>
                 </td>
+                <td>
+                    <form action="{{ route('presentacion') }}">
+                        @csrf
+                        <button type="submit" class="btn btn-danger">Inicio</button>
+                    </form>
+                </td>
             </tr>
         </table>
         <br>
